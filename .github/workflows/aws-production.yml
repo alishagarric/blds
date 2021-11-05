@@ -1,0 +1,40 @@
+name: CI to AWS EB (Production)
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - run: cd web && npm install -g yarn
+      - run: cd web && yarn install --frozen-lockfile
+      - run: cd web && yarn
+      - name: Build
+        run: cd web && yarn build
+
+      - name: Generate deployment package
+        run: cd web && zip -r deploy.zip . -x '*.git*' -x node_modules/\*
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v16
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: www.solas.ai
+          environment_name: Wwwsolasai-env
+          version_label: ${{ github.sha }}
+          region: us-east-1
+          deployment_package: web/deploy.zip
