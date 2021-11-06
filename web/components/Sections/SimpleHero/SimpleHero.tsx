@@ -5,14 +5,9 @@ import { Bird } from "../../_svg/Birds/Bird";
 import { Fire } from "../../_svg/Icons/Fire";
 import { Logotype } from "../../_svg/Logos/Logotype";
 import { Button } from "../Button";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-
 
 // Styles
-import {
-  SimpleHeroClassName,
-  SimpleHeroStyle,
-} from "./styles.scss";
+import { SimpleHeroClassName, SimpleHeroStyle } from "./styles.scss";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -27,7 +22,7 @@ export type LMNTS_Section_SimpleHero = {
     label: string;
     target?: string;
     noSmoothScroll?: boolean;
-  }
+  };
 };
 
 /**
@@ -42,9 +37,8 @@ export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
   logo,
   guide_text,
   guide_link,
-  cta
+  cta,
 }) => {
-
   return (
     <SimpleHeroStyle className={`${SimpleHeroClassName}`} id="top">
       <Inner className={`${SimpleHeroClassName}__inner`}>
@@ -53,23 +47,27 @@ export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
         <div className={`${SimpleHeroClassName}__grid`}>
           <div className={`${SimpleHeroClassName}__grid__text`}>
             <Fire />
-            {headline && <h1 className={`${SimpleHeroClassName}__grid__text__headline`}>{headline}</h1>}
+            {headline && (
+              <h1 className={`${SimpleHeroClassName}__grid__text__headline`}>
+                {headline}
+              </h1>
+            )}
             {logo && <Logotype />}
           </div>
 
-          { (guide_text || cta) && 
+          {(guide_text || cta) && (
             <p className={`${SimpleHeroClassName}__grid__guide txt-caption`}>
-              {guide_text && !guide_link &&
-                <span>{guide_text}</span>
-              }
-              {guide_text && guide_link &&
-                <AnchorLink href={guide_link}>{guide_text}</AnchorLink>
-              }
-              {cta &&
-                <Button link={cta.link} label={cta.label} target={cta.target} noSmoothScroll={cta.noSmoothScroll}/>
-              }
+              {guide_text && !guide_link && <span>{guide_text}</span>}
+              {cta && (
+                <Button
+                  link={cta.link}
+                  label={cta.label}
+                  target={cta.target}
+                  noSmoothScroll={cta.noSmoothScroll}
+                />
+              )}
             </p>
-          }
+          )}
         </div>
       </Inner>
     </SimpleHeroStyle>

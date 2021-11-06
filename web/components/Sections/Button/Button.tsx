@@ -2,16 +2,11 @@
 import React from "react";
 
 // Styles
-import {
-  ButtonClassName,
-  ButtonStyle,
-} from "./styles.scss";
+import { ButtonClassName, ButtonStyle } from "./styles.scss";
 
 //Components
 import Link from "next/link";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Download } from "../../_svg/Icons/Download";
-
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -38,8 +33,6 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
   target,
   noSmoothScroll,
 }) => {
-  
-
   if (download) {
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
@@ -47,25 +40,20 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
           <Download />
           {label}
         </a>
-      </ ButtonStyle>
-    );
-  } else if (link && !target && !noSmoothScroll){
-    return (
-      <ButtonStyle className={`${ButtonClassName}`}>
-        <AnchorLink href={link} className="txt-caption">
-          {label}
-        </AnchorLink>
       </ButtonStyle>
     );
   } else if (link && target) {
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
-        <a href={link} target={target ? target : "_self"} className="txt-caption">
+        <a
+          href={link}
+          target={target ? target : "_self"}
+          className="txt-caption"
+        >
           {label}
         </a>
       </ButtonStyle>
     );
-
   } else if (link && noSmoothScroll) {
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
@@ -77,13 +65,10 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
   } else {
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
-        <div className="txt-caption">
-          {label}
-        </div>
+        <div className="txt-caption">{label}</div>
       </ButtonStyle>
     );
   }
-
 };
 
 // End Component
