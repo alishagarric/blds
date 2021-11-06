@@ -7,8 +7,8 @@
 export const Base = {
   // Core Base Measurement
   Size: {
-    Lg: 20,
-    Md: 20,
+    Lg: 60,
+    Md: 40,
     Sm: 20,
   },
 

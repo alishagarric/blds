@@ -31,6 +31,16 @@ export class CssUtils {
     `;
   };
 
+  static Fill = () => {
+    return css`
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 0;
+      height: 100%;
+    `;
+  };
+
   static ForceFullWidth = (
     spacing: string = "0",
     addGutter: boolean = false

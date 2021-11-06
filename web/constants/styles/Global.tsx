@@ -74,13 +74,16 @@ html {
    */
 
   body {
-    min-height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
     background-color: ${Theme.Color.White};
     color: ${Theme.Color.Text};
+    background-image: url('img/City.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 
   /**
@@ -91,6 +94,7 @@ html {
     display: block;
     position: relative;
     z-index: 10;
+    background: transparent;
   }
 
   .__visually-hidden {

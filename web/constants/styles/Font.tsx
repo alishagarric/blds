@@ -7,9 +7,9 @@ import { createGlobalStyle } from "styled-components";
 import { Base } from "./Base";
 
 export const Font = {
-  Body: `'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  Code: `'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  Header: `'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Body: `'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Code: `'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Header: `'Libre Baskerville', serif`,
 };
 
 // Global Type Styles
@@ -42,26 +42,24 @@ export const Typography = createGlobalStyle`
   */
 
   .txt-caption {
-    font-size: 1rem;
-    font-weight: 700;
+    font-family: ${Font.Body};
+    font-size: 1.3125rem;
     letter-spacing: 1px;
     text-transform: uppercase;
 
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 0.9rem;
+      font-size: 1.2rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 0.8rem;
+      font-size: 1.1rem;
     }
   }
 
   /* Paragraph Styles */
   p {
     font-family: ${Font.Body};
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.125rem;
     line-height: 1.45;
-    letter-spacing: -0.2px;
     padding-bottom: calc(var(--Size) / 3.5);
 
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
@@ -75,7 +73,7 @@ export const Typography = createGlobalStyle`
   .p-sm {
     font-family: ${Font.Body};
     line-height: 1.45;
-    font-size: 0.9rem;
+    font-size: 1rem;
     letter-spacing: 0px;
   }
 
@@ -86,82 +84,77 @@ export const Typography = createGlobalStyle`
     letter-spacing: 0px;
 
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1.05;
+      font-size: 1.1;
     }
   }
 
   /* Header Styles */
-  h1, h2, h3, h4, h5, h6, .headline {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: ${Font.Header};
     line-height: 1.1;
     padding: 0;
     margin: 0;
-    letter-spacing: -0.2px;
+    padding-bottom: calc(var(--Size) / 2);
   }
 
   h1, .h1 {
-    font-size: 3.8rem;
+    font-size: 5.5rem;
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 3.04rem;
+      font-size: 4rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 2.25rem;
+      font-size: 3rem;
     }
   }
   h2, .h2 {
-    font-size: 2.75rem;
+    font-size: 3.75rem;
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 1.8rem;
+      font-size: 3rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1.35rem;
+      font-size: 2.75rem;
     }
   }
   h3, .h3 {
-    font-size: 2.25rem;
+    font-size: 2.375rem;
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1.35rem;
+      font-size: 2.1rem;
     }
   }
   h4, .h4 {
+    font-size: 2.1875rem;
+    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
+      font-size: 2rem;
+    }
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      font-size: 1.8rem;
+    }
+  }
+  h5, .h5 {
     font-size: 1.75rem;
+    font-family: ${Font.Body};
+    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
+      font-size: 1.5rem;
+    }
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      font-size: 1.4rem;
+    }
+  }
+  h6, .h6 {
+    font-size: 1.5rem;
+    font-family: ${Font.Body};
+    line-height: 1.5;
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
       font-size: 1.4rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1.05rem;
+      font-size: 1.3rem;
     }
   }
-  h5, .h5 {
-    font-size: 1.5rem;
-    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 1.2rem;
-    }
-    @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1rem;
-    }
-  }
-  h6, .h6 {
-    font-size: 1.25rem;
-
-    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 1rem;
-    }
-  }
-
-  .headline {
-    font-size: 5.625rem;
-
-    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      font-size: 3rem;
-    }
-  }
-
-  h1, h2, h3, h4, h5, h6, p, .heading-padding { padding-bottom: calc(var(--Size)); }
 `;

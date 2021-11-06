@@ -13,6 +13,7 @@
 import styled from "styled-components";
 import { Root } from "../../constants/Root";
 import { Base } from "../../constants/styles/Base";
+import { Color } from "../../constants/styles/Color";
 import { Theme } from "../../constants/Theme";
 import { ButtonClassName } from "../Sections/Button/styles.scss";
 import { ContactInfoClassName } from "../Sections/ContactInfo/styles.scss";
@@ -30,24 +31,27 @@ export const NavigationOverlayClassName = `nav-overlay`;
 
 export const NavigationStyle = styled.nav`
   &.${NavigationClassName} {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
     z-index: 999;
     left: 0;
     right: 0;
     top: 0;
-    padding: 0 ${Root.Size};
-    align-items: center;
-    background: ${Theme.Color.Background};
+    padding: calc(${Root.Size} / 2) 0;
     will-change: transform;
-    transition: transform .25s ease;
+    transition: transform 0.25s ease;
 
     &.__hidden {
       transform: translateY(-90px);
     }
 
+    > *:first-child {
+      align-items: baseline;
+    }
+
     .${NavigationClassName}__logo {
+      * {
+        padding-bottom: 0;
+      }
+
       .${BrandmarkClassName} {
         display: none;
       }
@@ -60,36 +64,49 @@ export const NavigationStyle = styled.nav`
     .${NavigationClassName}__links {
       display: flex;
       align-items: center;
+      flex: 1;
 
       &__list {
         display: flex;
         align-items: center;
-        padding-right: ${Root.Size};
+        padding: 0 calc(${Root.Size} / 2);
 
         &__item {
-          padding-right: calc(${Root.Size} * 1.5);
-          p {
-            padding-bottom: 0;
+          padding-right: calc(${Root.Size} / 2);
 
-            a {
-              height: 90px;
-              display: block;
-              display: flex;
-              align-items: center;
+          a.txt-caption {
+            height: 90px;
+            font-size: 1rem;
+            font-weight: 600;
+            position: relative;
+
+            &:after {
+              content: "";
+              left: 0;
+              opacity: 0;
+              width: 100%;
+              position: absolute;
+              bottom: calc(${Root.Size} / -12);
+              height: 3px;
+              background-color: ${Color.Orange};
+            }
+
+            &:hover {
+              text-decoration: none;
+
+              &:after {
+                opacity: 1;
+              }
             }
           }
         }
       }
+    }
 
-      .${ButtonClassName} {
-        margin-top: 0;
-        background: ${Theme.Color.Secondary};
-
-        a, div {
-          color: ${Theme.Color.White};
-        }
-        
-      }
+    .${NavigationClassName}__tagline {
+      font-size: 1.75rem;
+      padding-bottom: 0;
+      font-style: italic;
     }
 
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
@@ -103,7 +120,7 @@ export const NavigationStyle = styled.nav`
 
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       padding: 0 5px 0 ${Root.Size};
-      
+
       .${NavigationClassName}__logo {
         display: flex;
         align-items: center;
@@ -137,8 +154,8 @@ export const NavigationStyle = styled.nav`
         }
 
         .${ButtonClassName} {
-
-          a, div {
+          a,
+          div {
             height: 40px;
             padding-top: 0;
             padding-bottom: 0;
@@ -166,7 +183,7 @@ export const NavigationOverlayStyle = styled.nav`
     flex-direction: column;
     justify-content: space-between;
 
-    .${OverlayBirdClassName}{
+    .${OverlayBirdClassName} {
       position: absolute;
       height: 80%;
       right: -20%;
@@ -176,7 +193,9 @@ export const NavigationOverlayStyle = styled.nav`
       z-index: 0;
     }
 
-    .${NavigationOverlayClassName}__exit, .${NavigationOverlayClassName}__links, .${ContactInfoClassName} {
+    .${NavigationOverlayClassName}__exit,
+      .${NavigationOverlayClassName}__links,
+      .${ContactInfoClassName} {
       position: relative;
       z-index: 1;
     }
@@ -191,7 +210,7 @@ export const NavigationOverlayStyle = styled.nav`
         height: calc(${Root.Size} * 1.5);
         margin-bottom: calc(${Root.Size} / 3);
       }
-    }  
+    }
 
     .${NavigationOverlayClassName}__exit {
       padding-bottom: calc(${Root.Size} * 3);
@@ -199,7 +218,7 @@ export const NavigationOverlayStyle = styled.nav`
         width: 30px;
         height: auto;
       }
-    } 
+    }
 
     .${NavigationOverlayClassName}__links {
       flex: 1;
@@ -220,7 +239,8 @@ export const NavigationOverlayStyle = styled.nav`
     &.__active {
       display: flex;
 
-      ~ main, ~ footer {
+      ~ main,
+      ~ footer {
         display: none;
       }
 

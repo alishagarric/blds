@@ -11,9 +11,7 @@ import { createGlobalStyle, css } from "styled-components";
 // _______________________________________________________
 
 export type ColorTheme = {
-  name?:
-    | "default"
-    | "alternate";
+  name?: "default" | "alternate";
   primary: string;
   secondary: string;
   background: string;
@@ -52,8 +50,13 @@ export const Color = {
   Grey: "#ADADAD",
   White: "#FFFFFF",
 
-};
+  OffWhite: "#FEF8F1",
+  Orange: "#F3791A",
 
+  Purple1: "#1D223D",
+  Purple2: "#212745",
+  Purple3: "#40405B",
+};
 
 /**
  *
@@ -84,9 +87,7 @@ export const Palette = createGlobalStyle`
 //////////////////////////////////////////////////////////////////////
 // End Component
 
-
 export class ColorUtils {
-
   static SetThemeFromServer = (serverTheme: ColorTheme) => {
     return createGlobalStyle`      
       :root {
@@ -97,5 +98,5 @@ export class ColorUtils {
         --overlayMode: ${serverTheme.overlayMode};
       }
     `;
-  }
+  };
 }

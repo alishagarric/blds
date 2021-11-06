@@ -7,19 +7,9 @@
  */
 
 // Core
+import Link from "next/link";
 import React from "react";
 import { Inner } from "../Inner";
-import { Anchor } from "../Sections/Anchor";
-import { ContactInfo } from "../Sections/ContactInfo";
-import { ContactInfoStyle } from "../Sections/ContactInfo/styles.scss";
-import { BlueBird } from "../_svg/Birds/BlueBird";
-import { Email } from "../_svg/Icons/Email";
-import { Facebook } from "../_svg/Icons/Facebook";
-import { LinkedIn } from "../_svg/Icons/LinkedIn";
-import { Location } from "../_svg/Icons/Location";
-import { Twitter } from "../_svg/Icons/Twitter";
-import { Logo } from "../_svg/Logos/Logo";
-
 // Styles
 import { FooterClassName, FooterStyle } from "./styles.scss";
 
@@ -30,51 +20,33 @@ export type Footer = {
   //
 };
 
-export const Footer: React.FunctionComponent<Footer> = ({ }) => {
+export const Footer: React.FunctionComponent<Footer> = ({}) => {
   return (
     <FooterStyle className={`${FooterClassName}`}>
-      <Anchor id="contact" />
-      <BlueBird />
       <Inner>
-          <h2 className={`${FooterClassName}__headline h3`}>Contact Us</h2>
-          <div className={`${FooterClassName}__container`}>
+        <div className={`${FooterClassName}__main`}>
+          <Link href="/">
+            <a>
+              <p className="h2">BLDS</p>
+              <p className="p-lg">
+                Expert Analysis, Testimony, &amp; Consulting
+              </p>
+            </a>
+          </Link>
+        </div>
 
-            <div className={`${FooterClassName}__details`}>
-              <h3 className={`${FooterClassName}__details__subheadline h4`}>Reach Us Directly</h3>
-              <ContactInfo />
-            </div>
+        <div className={`${FooterClassName}__bottom`}>
+          <p>© 2021 BLDS.LLC, All Rights Reserved</p>
+        </div>
 
-            <div className={`${FooterClassName}__form`}>
-              <p><i>Fill out the form below and our team will contact you</i></p>
-              <form
-                action="https://formspree.io/f/mdoyogdw"
-                method="POST"
-              >
-                <fieldset>
-                  <input type="text" placeholder="Name" name="Name" required/>
-                  <input type="text" placeholder="Email" name="_replyto" required/>
-                  <input type="text" placeholder="Company Name" name="Company Name"/>
-                </fieldset>
-
-                <fieldset>
-                  <textarea placeholder="Type us a message" name="Message" required></textarea>
-                  <input type="submit" value="Submit"/>
-                </fieldset>
-              </form>
-            </div>
-          </div>
-
-          <div className={`${FooterClassName}__bottom`}>
-            <Logo />
-            <p>© 2021 SolasAI</p>
-          </div>
-
-          <div className={`${FooterClassName}__social`}>
-            <a href="https://www.facebook.com/solasai.software/" target="_blank"><Facebook/></a>
-            <a href="https://www.linkedin.com/company/solasai" target="_blank"><LinkedIn/></a>
-            <a href="https://twitter.com/solas_ai" target="_blank"><Twitter/></a>
-          </div>
-        
+        <div className={`${FooterClassName}__form`}>
+          <p>Contact BLDS</p>
+          <form>
+            <input type="text" placeholder="email address" required />
+            <textarea placeholder="message" required />
+            <input type="submit" value="Send" />
+          </form>
+        </div>
       </Inner>
     </FooterStyle>
   );
