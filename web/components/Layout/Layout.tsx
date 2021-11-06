@@ -34,18 +34,16 @@ export const LayoutClassName = "wrapper";
 export const Layout: React.FunctionComponent = ({ children }: Layout) => {
   const router: NextRouter = useRouter();
 
-
   return (
     <>
       <GlobalStyle />
       {/*<SetGlobalTheme />*/}
-      <SiteHead title="Solas Ai" />
-        {children}
-      <Footer/>
+      <SiteHead title="BLDS" />
+      {children}
+      <Footer />
     </>
   );
 };
-
 
 /*
 interface Layout {
