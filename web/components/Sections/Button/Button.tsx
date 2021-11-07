@@ -5,8 +5,6 @@ import React from "react";
 import { ButtonClassName, ButtonStyle } from "./styles.scss";
 
 //Components
-import Link from "next/link";
-import { Download } from "../../_svg/Icons/Download";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -37,7 +35,6 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
         <a className="txt-caption" href={download} download>
-          <Download />
           {label}
         </a>
       </ButtonStyle>
