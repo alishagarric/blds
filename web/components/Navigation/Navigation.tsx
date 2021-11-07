@@ -12,10 +12,8 @@ import React from "react";
 import { Base } from "../../constants/styles/Base";
 import { Inner } from "../Inner";
 
-import { Brandmark } from "../_svg/Brandmark/Brandmark";
 import { Exit } from "../_svg/Icons/Exit";
 import { Hamburger } from "../_svg/Icons/Hamburger";
-import { Logo } from "../_svg/Logos/Logo";
 
 // Styles
 import {
@@ -105,12 +103,13 @@ export class Navigation extends React.PureComponent<
   }
 
   render() {
+    console.log(this.props.homepage);
     return (
       <>
         <NavigationStyle
           className={`${NavigationClassName} ${
             this.state.navHidden ? "__hidden" : ""
-          }`}
+          } ${this.props.homepage ? "__layout-alt" : ""}`}
         >
           <Inner className={`${NavigationClassName}__inner`}>
             <div className={`${NavigationClassName}__logo`}>
@@ -124,7 +123,6 @@ export class Navigation extends React.PureComponent<
               >
                 <Hamburger />
               </div>
-              <Brandmark />
             </div>
 
             <div className={`${NavigationClassName}__links`}>
@@ -147,7 +145,7 @@ export class Navigation extends React.PureComponent<
               </ul>
             </div>
             <p className={`${NavigationClassName}__tagline h4`}>
-              Expert Analysis, Testimony &amp; Consulting
+              Expert Analysis, <span>Testimony &amp; Consulting</span>
             </p>
           </Inner>
         </NavigationStyle>
@@ -169,12 +167,38 @@ export class Navigation extends React.PureComponent<
               <li
                 className={`${NavigationOverlayClassName}__links__list__item`}
               >
-                <a
-                  onClick={() => this.updateOverlayNav(false)}
-                  href={`${this.props.homepage ? "" : "/"}#product`}
-                >
-                  What
-                </a>
+                <Link href="/about">
+                  <a
+                    className={`txt-caption`}
+                    onClick={() => this.updateOverlayNav(false)}
+                  >
+                    About BLDS
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={`${NavigationOverlayClassName}__links__list__item`}
+              >
+                <Link href="/experts">
+                  <a
+                    className={`txt-caption`}
+                    onClick={() => this.updateOverlayNav(false)}
+                  >
+                    Our Experts
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={`${NavigationOverlayClassName}__links__list__item`}
+              >
+                <Link href="/contact">
+                  <a
+                    className={`txt-caption`}
+                    onClick={() => this.updateOverlayNav(false)}
+                  >
+                    Contact Us
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

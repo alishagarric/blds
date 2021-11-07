@@ -9,7 +9,7 @@ export const Base = {
   Size: {
     Lg: 60,
     Md: 40,
-    Sm: 20,
+    Sm: 30,
   },
 
   // Root Element Measurement
@@ -35,7 +35,7 @@ export const Base = {
 
   // Site Grid
   Grid: {
-    SiteWidth: 1280, // px
+    SiteWidth: 1440, // px
     ReadingWidth: 1000, // px
     Nav: {
       Size: {

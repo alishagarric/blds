@@ -8,6 +8,7 @@ import { Navigation } from "../components/Navigation/Navigation";
 import { LayoutClassName } from "../components/Layout";
 import { TriColumnText } from "../components/Sections/TriColumnText";
 import { TabbedTextBox } from "../components/Sections/TabbedTextBox";
+import { Inner } from "../components/Inner";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -33,50 +34,52 @@ const HomePage: NextPage<HomePage> = () => {
       <Navigation homepage={true} key={HomePageClassName} />
       <main className={`${LayoutClassName}`}>
         <div className={`${HomePageClassName}`}>
-          <TabbedTextBox
-            headline="Industry-leading consultants and data scientists"
-            headlineAlignment="left"
-            layout="most-space"
-            textBlocks={[
-              {
-                _type: "text",
-                text: {
-                  __html: `<p class="h6">Virtually every major lending institution in the U.S. uses our framework for fair lending</p>`,
+          <Inner>
+            <TabbedTextBox
+              headline="Industry-leading consultants and data scientists"
+              headlineAlignment="left"
+              layout="most-space"
+              textBlocks={[
+                {
+                  _type: "text",
+                  text: {
+                    __html: `<p class="h6">Virtually every major lending institution in the U.S. uses our framework for fair lending</p>`,
+                  },
                 },
-              },
-              {
-                _type: "text",
-                text: {
-                  __html: `<p class="h6">Providing expert consulting to numerous Federal, State, and Local Regulators</p>`,
+                {
+                  _type: "text",
+                  text: {
+                    __html: `<p class="h6">Providing expert consulting to numerous Federal, State, and Local Regulators</p>`,
+                  },
                 },
-              },
-            ]}
-          />
-          <TriColumnText
-            columns={[
-              {
-                _type: "stat",
-                number: "45",
-                unit: "years",
-                text: "In Employment Discrimination Analytics",
-                alignment: "center",
-              },
-              {
-                _type: "stat",
-                number: "25",
-                unit: "years",
-                text: "In Fair Lending Analytics",
-                alignment: "center",
-              },
-              {
-                _type: "html",
-                text: {
-                  __html: `<p class="p-lg">Consultants to <b>over 50% of the fortune 50</b></p>`,
+              ]}
+            />
+            <TriColumnText
+              columns={[
+                {
+                  _type: "stat",
+                  number: "45",
+                  unit: "years",
+                  text: "In Employment Discrimination Analytics",
+                  alignment: "center",
                 },
-                alignment: "center",
-              },
-            ]}
-          />
+                {
+                  _type: "stat",
+                  number: "25",
+                  unit: "years",
+                  text: "In Fair Lending Analytics",
+                  alignment: "center",
+                },
+                {
+                  _type: "html",
+                  text: {
+                    __html: `<p class="h5">Consultants to <b>over 50% of the fortune 50</b></p>`,
+                  },
+                  alignment: "center",
+                },
+              ]}
+            />
+          </Inner>
         </div>
       </main>
     </>

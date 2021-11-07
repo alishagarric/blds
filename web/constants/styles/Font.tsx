@@ -7,13 +7,16 @@ import { createGlobalStyle } from "styled-components";
 import { Base } from "./Base";
 
 export const Font = {
-  Body: `'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  Code: `'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  Header: `'Libre Baskerville', serif`,
+  Body: `'proxima-nova', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Code: `'proxima-nova', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Header: `'baskerville-urw', serif`,
 };
 
 // Global Type Styles
 export const Typography = createGlobalStyle`
+
+  @import url("https://use.typekit.net/vvl1tlf.css");
+  @import url("https://use.typekit.net/vvl1tlf.css");
 
   /* Base Text Styles */
   body {
@@ -61,6 +64,10 @@ export const Typography = createGlobalStyle`
     font-size: 1.125rem;
     line-height: 1.45;
     padding-bottom: calc(var(--Size) / 3.5);
+
+    .first-letter {
+      initial-letter: 2;
+    }
 
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
       font-size: 1rem;
@@ -115,7 +122,7 @@ export const Typography = createGlobalStyle`
       font-size: 3rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 2.75rem;
+      font-size: 2.3rem;
     }
   }
   h3, .h3 {
@@ -124,7 +131,7 @@ export const Typography = createGlobalStyle`
       font-size: 2.2rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 2.1rem;
+      font-size: 1.5rem;
     }
   }
   h4, .h4 {
@@ -133,7 +140,7 @@ export const Typography = createGlobalStyle`
       font-size: 2rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
   }
   h5, .h5 {
@@ -143,7 +150,7 @@ export const Typography = createGlobalStyle`
       font-size: 1.5rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   }
   h6, .h6 {
@@ -154,7 +161,7 @@ export const Typography = createGlobalStyle`
       font-size: 1.4rem;
     }
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
     }
   }
 `;

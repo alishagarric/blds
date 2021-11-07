@@ -40,11 +40,21 @@ export const Footer: React.FunctionComponent<Footer> = ({}) => {
         </div>
 
         <div className={`${FooterClassName}__form`}>
-          <p>Contact BLDS</p>
           <form>
-            <input type="text" placeholder="email address" required />
-            <textarea placeholder="message" required />
-            <input type="submit" value="Send" />
+            <p className={`${FooterClassName}__form__label`}>Contact BLDS</p>
+            <fieldset className={`${FooterClassName}__form__email`}>
+              <input type="text" placeholder="email address" required />
+            </fieldset>
+            <textarea
+              placeholder="message"
+              required
+              className={`${FooterClassName}__form__message`}
+            />
+            <input
+              type="submit"
+              value="Send"
+              className={`${FooterClassName}__form__submit txt-caption`}
+            />
           </form>
         </div>
       </Inner>

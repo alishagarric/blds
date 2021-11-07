@@ -12,7 +12,6 @@
 //////////////////////////////////////////////////////////////////////
 
 import { Color, ColorTheme } from "../styles/Color";
-import { Theme } from "../Theme";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -32,11 +31,11 @@ export const __IS_DEBUG_MODE__ = true;
  *
  */
 export const Settings = {
-  siteTitle: "Solas Ai",
-  siteTitleShort: "Solas Ai",
+  siteTitle: "BLDS",
+  siteTitleShort: "BLDS",
   siteDescription: "",
   siteBaseKeywords: "",
-  siteUrl: "https://solas.com/",
+  siteUrl: "https://blds.com/",
   themeColor: Color.Primary,
   secondaryColor: Color.Secondary,
   backgroundColor: Color.Background,
@@ -61,7 +60,7 @@ export const DefaultTheme: ColorTheme = {
   background: Color.Background,
   foreground: Color.Text,
   overlayMode: "overlay",
-}
+};
 
 export const AlternateTheme: ColorTheme = {
   name: "alternate",
@@ -70,4 +69,4 @@ export const AlternateTheme: ColorTheme = {
   background: "#000000",
   foreground: "#FFFDEB",
   overlayMode: "difference",
-}
+};

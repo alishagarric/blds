@@ -10,16 +10,12 @@
 //////////////////////////////////////////////////////////////////////
 
 // Core
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
-import { Color, Palette } from "../../../constants/styles/Color";
+import { Color } from "../../../constants/styles/Color";
 import { CssUtils } from "../../../constants/styles/CssUtils";
 import { Font } from "../../../constants/styles/Font";
-import { Theme } from "../../../constants/Theme";
-import { BirdClassName } from "../../_svg/Birds/Bird";
-import { LogoClassName } from "../../_svg/Logos/Logo";
-import { LogotypeClassName } from "../../_svg/Logos/Logotype";
 
 // Constants
 
@@ -38,27 +34,16 @@ export const BioStyle = styled.section`
       padding: calc(${Root.Size} * 2) calc(${Root.Size} * 1.5)
         calc(${Root.Size} * 1.5) calc(${Root.Size} * 1.25);
       grid-template-columns: 1fr 2fr;
-      position: relative;
-      overflow: hidden;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: calc(${Root.Size});
-        width: calc(${Root.Size});
-        background: ${Color.Orange};
-        transform: rotate(45deg) translateY(-70%);
-      }
+      ${CssUtils.OrangeTab};
 
       &__image {
         grid-row: 1 / 3;
         grid-column: 1 / 2;
 
         img {
+          width: 80%;
+          height: auto;
           border-radius: 50%;
-          object-fit: contain;
         }
       }
 
@@ -68,19 +53,9 @@ export const BioStyle = styled.section`
         margin-bottom: calc(${Root.Size} / 1.5);
 
         h2 {
-          position: relative;
-          padding-bottom: calc(${Root.Size} / 4);
           display: inline-block;
-
-          &:after {
-            content: "";
-            position: absolute;
-            height: 1px;
-            left: 0;
-            width: 100%;
-            bottom: 0;
-            background-color: ${Color.Black};
-          }
+          color: ${Color.Purple4};
+          ${CssUtils.UnderlinedHeader};
         }
       }
 
@@ -102,6 +77,7 @@ export const BioStyle = styled.section`
 
         &__label {
           font-family: ${Font.Body};
+          color: ${Color.Purple4};
         }
 
         &__item {
@@ -135,11 +111,47 @@ export const BioStyle = styled.section`
 
         &__label {
           font-family: ${Font.Body};
+          color: ${Color.Purple4};
+        }
+      }
+    }
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + "px"}) {
+    .${BioClassName} {
+      &__bio {
+        grid-template-columns: 1fr 3fr;
+
+        &__education {
+          grid-row: 3 / 4;
+          grid-column: 2 / 3;
+        }
+
+        &__publications {
+          grid-row: 4 / 5;
         }
       }
     }
   }
 
   @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+    .${BioClassName} {
+      &__bio {
+        grid-template-columns: auto;
+        gap: calc(${Root.Size} / 2);
+
+        > * {
+          grid-column: 1 / 2;
+          grid-row: auto;
+        }
+
+        &__image {
+          img {
+            width: calc(${Root.Size} * 4);
+            margin-bottom: calc(${Root.Size} / 2);
+          }
+        }
+      }
+    }
   }
 `;

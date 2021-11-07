@@ -38,22 +38,6 @@ export const SiteHead = ({ title = "This is the default title" }: SiteHead) => {
         rel="stylesheet"
         href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
       />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-      />
 
       {/* Favicon */}
       <link
@@ -83,12 +67,12 @@ export const SiteHead = ({ title = "This is the default title" }: SiteHead) => {
       <meta name="theme-color" content="#ffffff" />
 
       {/* Opengraph */}
-      <meta property="og:title" content="SolasAi" />
-      <meta property="og:site_name" content="SolasAi" />
-      <meta property="og:url" content="solasai.com" />
+      <meta property="og:title" content="BLDS" />
+      <meta property="og:site_name" content="BLDS" />
+      <meta property="og:url" content="blds.com" />
       <meta
         property="og:description"
-        content="A platform to reduce your regulatory, legal, and reputational risk"
+        content="Expert Analysis, Testimony &amp; Consulting"
       />
       <meta property="og:type" content="article" />
       <meta property="og:image" content="/img/opengraph.png" />

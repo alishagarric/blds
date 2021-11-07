@@ -16,7 +16,7 @@ import { InnerStyle } from "./styles.scss";
 //////////////////////////////////////////////////////////////////////
 
 export const Inner = ({ children }: any) => (
-  <InnerStyle className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">{children}</InnerStyle>
+  <InnerStyle className="container">{children}</InnerStyle>
 );
 
 // End Component

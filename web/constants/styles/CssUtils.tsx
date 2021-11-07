@@ -3,7 +3,9 @@ import { createGlobalStyle, css } from "styled-components";
 
 // Constants
 import {} from "../Theme";
-import {} from "../Root";
+import { Root } from "../Root";
+import { Color } from "./Color";
+import { Base } from "./Base";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -38,6 +40,41 @@ export class CssUtils {
       width: 100%;
       top: 0;
       height: 100%;
+    `;
+  };
+
+  static OrangeTab = () => {
+    return css`
+      position: relative;
+      overflow: hidden;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: calc(${Root.Size});
+        width: calc(${Root.Size});
+        background: ${Color.Orange};
+        transform: rotate(45deg) translateY(-70%);
+      }
+    `;
+  };
+
+  static UnderlinedHeader = () => {
+    return css`
+      position: relative;
+      padding-bottom: calc(${Root.Size} / 4);
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        background-color: ${Color.OffBlack};
+      }
     `;
   };
 

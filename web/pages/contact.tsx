@@ -8,6 +8,7 @@ import { Navigation } from "../components/Navigation/Navigation";
 import { LayoutClassName } from "../components/Layout";
 import { TriColumnText } from "../components/Sections/TriColumnText";
 import { Inner } from "../components/Inner";
+import { ContactForm } from "../components/Sections/ContactForm";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -18,7 +19,7 @@ export const ContactPageClassName = "contact";
 
 function initializeReactGA() {
   ReactGA.initialize("G-FX52XQGXD1");
-  ReactGA.pageview("/homepage");
+  ReactGA.pageview("/contact");
 }
 
 /**
@@ -30,31 +31,32 @@ function initializeReactGA() {
 const ContactPage: NextPage<ContactPage> = () => {
   return (
     <>
-      <Navigation homepage={true} key={ContactPageClassName} />
+      <Navigation homepage={false} key={ContactPageClassName} />
       <main className={`${LayoutClassName}`}>
         <div className={`${ContactPageClassName}`}>
           <Inner>
-            <div style={{ background: "white", padding: "40px" }}>
-              <h3>Contact Us</h3>
-              <h6>Thank you for visiting BLDS.</h6>
-              <h4>
-                Please contact us if you have any questions or if you would like
-                more information.
-              </h4>
-              <h4>Offices</h4>
-              <p>
-                Philadelphia Office: 1608 Walnut St. Suite 1108 Philadelphia, PA
-                19103 Phone: (215) 717-2320 Fax: (215) 717-2324
-              </p>
-              <p>
-                Boston Office: 264 North Main St. Suite 7 Natick, MA 01760
-                Phone: (508) 315-3454
-              </p>
-              <p>
-                Wilmington Office: 1201 North Orange St. Suite 602 Wilmington,
-                DE 19801 Phone: (302) 655-2510 Fax: (302) 655-2512
-              </p>
-            </div>
+            <ContactForm
+              headline="Contact Us"
+              subheadline="Thank you for visiting BLDS"
+              body={{
+                __html:
+                  "<p class='h4'><i>Please contact us if you have any questions or if you would like more information.</i></p>",
+              }}
+              offices={[
+                {
+                  __html:
+                    "<p class='p-sm'><b>Philadelphia Office:</b></br> 1608 Walnut St. Suite 1108 Philadelphia, PA 19103 </br><b>Phone:</b> (215) 717-2320 </br><b>Fax:</b> (215) 717-2324</p>",
+                },
+                {
+                  __html:
+                    "<p class='p-sm'><b>Boston Office:</b></br> 264 North Main St. Suite 7 Natick, MA 01760 </br><b>Phone:</b> (508) 315-3454</p>",
+                },
+                {
+                  __html:
+                    "<p class='p-sm'><b>Wilmington Office:</b></br> 1201 North Orange St. Suite 602 Wilmington, DE 19801 </br><b>Phone:</b> (302) 655-2510 </br><b>Fax:</b> (302) 655-2512</p>",
+                },
+              ]}
+            />
           </Inner>
         </div>
       </main>

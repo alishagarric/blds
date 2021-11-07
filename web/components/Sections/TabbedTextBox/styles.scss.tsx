@@ -10,10 +10,10 @@
 //////////////////////////////////////////////////////////////////////
 
 // Core
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
-import { Color, Palette } from "../../../constants/styles/Color";
+import { Color } from "../../../constants/styles/Color";
 import { CssUtils } from "../../../constants/styles/CssUtils";
 
 // Constants
@@ -26,6 +26,8 @@ import { CssUtils } from "../../../constants/styles/CssUtils";
 export const TabbedTextBoxClassName = `tabbed-text-box`;
 
 export const TabbedTextBoxStyle = styled.section`
+  width: 100%;
+
   .${TabbedTextBoxClassName} {
     &__container {
       background: ${Color.OffWhite};
@@ -36,22 +38,11 @@ export const TabbedTextBoxStyle = styled.section`
       grid-template-columns: auto auto;
       grid-template-rows: auto auto;
       gap: calc(${Root.Size});
-      overflow: hidden;
-      position: relative;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: calc(${Root.Size});
-        width: calc(${Root.Size});
-        background: ${Color.Orange};
-        transform: rotate(45deg) translateY(-70%);
-      }
+      ${CssUtils.OrangeTab};
 
       &__headline {
         grid-column: 1 / -1;
+        text-align: center;
 
         &.__alignment {
           &-center {
@@ -64,19 +55,9 @@ export const TabbedTextBoxStyle = styled.section`
         }
 
         h2 {
-          position: relative;
-          padding-bottom: calc(${Root.Size} / 4);
+          color: ${Color.Purple4};
           display: inline-block;
-
-          &:after {
-            content: "";
-            position: absolute;
-            height: 1px;
-            left: 0;
-            width: 100%;
-            bottom: 0;
-            background-color: ${Color.Black};
-          }
+          ${CssUtils.UnderlinedHeader};
         }
       }
 
@@ -148,6 +129,63 @@ export const TabbedTextBoxStyle = styled.section`
     }
   }
 
+  @media (max-width: ${Base.Media.Width.Md + "px"}) {
+    .${TabbedTextBoxClassName} {
+      &__container {
+        display: flex;
+        flex-direction: column;
+        gap: ${Root.Size};
+
+        > * {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        &.__layout {
+          &-most-space {
+            .${TabbedTextBoxClassName} {
+              &__container {
+                &__item:nth-of-type(even) {
+                  padding-left: 0;
+                  padding-right: 0;
+                }
+                &__item:nth-of-type(odd) {
+                  padding-right: 0;
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+    .${TabbedTextBoxClassName} {
+      &__container {
+        padding: calc(${Root.Size} * 2) 8%;
+
+        &__headline {
+          text-align: left;
+
+          h2 {
+            padding-bottom: calc(${Root.Size} / 3);
+          }
+        }
+
+        &__item {
+          &__image {
+            margin-bottom: calc(${Root.Size} / 3);
+          }
+
+          &.__type {
+            &-bio {
+              display: block;
+            }
+          }
+        }
+      }
+    }
   }
 `;

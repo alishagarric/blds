@@ -18,7 +18,7 @@ export const ExpertPageClassName = "expert";
 
 function initializeReactGA() {
   ReactGA.initialize("G-FX52XQGXD1");
-  ReactGA.pageview("/homepage");
+  ReactGA.pageview("/expert");
 }
 
 /**
@@ -30,7 +30,7 @@ function initializeReactGA() {
 const ExpertPage: NextPage<ExpertPage> = () => {
   return (
     <>
-      <Navigation homepage={true} key={ExpertPageClassName} />
+      <Navigation homepage={false} key={ExpertPageClassName} />
       <main className={`${LayoutClassName}`}>
         <div className={`${ExpertPageClassName}`}>
           <Bio

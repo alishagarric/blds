@@ -15,10 +15,8 @@ import { Root } from "../../constants/Root";
 import { Base } from "../../constants/styles/Base";
 import { Color } from "../../constants/styles/Color";
 import { Theme } from "../../constants/Theme";
+import { FooterClassName } from "../Footer/styles.scss";
 import { ButtonClassName } from "../Sections/Button/styles.scss";
-import { ContactInfoClassName } from "../Sections/ContactInfo/styles.scss";
-import { OverlayBirdClassName } from "../_svg/Birds/OverlayBird";
-import { BrandmarkClassName } from "../_svg/Brandmark/Brandmark";
 import { ExitClassName } from "../_svg/Icons/Exit";
 import { HamburgerClassName } from "../_svg/Icons/Hamburger";
 import { LogoClassName } from "../_svg/Logos/Logo";
@@ -35,25 +33,57 @@ export const NavigationStyle = styled.nav`
     left: 0;
     right: 0;
     top: 0;
-    padding: calc(${Root.Size} / 2) 0;
+    padding: calc(${Root.Size} / 2);
     will-change: transform;
     transition: transform 0.25s ease;
 
-    &.__hidden {
-      transform: translateY(-90px);
-    }
-
     > *:first-child {
       align-items: baseline;
+      flex-wrap: nowrap;
+    }
+
+    &.__layout-alt {
+      .${NavigationClassName} {
+        &__tagline {
+          align-self: flex-end;
+          margin: calc(${Root.Size} * 1.5) calc(${Root.Size} / 2)
+            calc(${Root.Size} * 1.5) 0;
+          font-size: 2.1875rem;
+
+          span {
+            display: block;
+            white-space: nowrap;
+            padding-left: 20%;
+          }
+        }
+      }
+
+      ~ footer {
+        .${FooterClassName} {
+          &__main {
+            p {
+              max-width: 200px;
+            }
+          }
+
+          &__bottom {
+            grid-column: 1 / -1;
+            text-align: center;
+          }
+
+          &__form {
+            display: block;
+          }
+        }
+      }
     }
 
     .${NavigationClassName}__logo {
+      color: ${Color.Purple4};
+      cursor: pointer;
+
       * {
         padding-bottom: 0;
-      }
-
-      .${BrandmarkClassName} {
-        display: none;
       }
 
       &__menu-toggle {
@@ -79,6 +109,8 @@ export const NavigationStyle = styled.nav`
             font-size: 1rem;
             font-weight: 600;
             position: relative;
+            color: ${Color.Purple4};
+            white-space: nowrap;
 
             &:after {
               content: "";
@@ -110,6 +142,16 @@ export const NavigationStyle = styled.nav`
     }
 
     @media (max-width: ${Base.Media.Width.Lg + "px"}) {
+      &.${NavigationClassName} {
+        &.__layout-alt {
+          .${NavigationClassName} {
+            &__tagline {
+              font-size: 2.5vw;
+              margin-right: 0;
+            }
+          }
+        }
+      }
       .${NavigationClassName}__logo {
         .${LogoClassName} {
           height: 40px;
@@ -119,27 +161,14 @@ export const NavigationStyle = styled.nav`
     }
 
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
-      padding: 0 5px 0 ${Root.Size};
-
       .${NavigationClassName}__logo {
         display: flex;
         align-items: center;
-
-        .${BrandmarkClassName} {
-          display: block;
-          height: 40px;
-          margin-top: 5px;
-          margin-bottom: 5px;
-          width: auto;
-        }
-
-        .${LogoClassName} {
-          display: none;
-        }
+        width: 100%;
+        justify-content: space-between;
 
         &__menu-toggle {
           display: block;
-          margin-right: calc(${Root.Size} / 2);
 
           .${HamburgerClassName} {
             width: auto;
@@ -148,19 +177,30 @@ export const NavigationStyle = styled.nav`
         }
       }
 
-      .${NavigationClassName}__links {
-        &__list {
-          display: none;
-        }
+      .${NavigationClassName}__links__list, .${NavigationClassName}__tagline {
+        display: none;
+      }
+    }
 
-        .${ButtonClassName} {
-          a,
-          div {
-            height: 40px;
-            padding-top: 0;
-            padding-bottom: 0;
-            display: grid;
-            place-content: center;
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      padding: 0;
+
+      .${NavigationClassName}__logo {
+        .h2 {
+          line-height: 1.4;
+        }
+      }
+
+      &.${NavigationClassName} {
+        &.__layout-alt {
+          ~ footer {
+            .${FooterClassName} {
+              &__main {
+                p {
+                  max-width: none;
+                }
+              }
+            }
           }
         }
       }
@@ -172,8 +212,8 @@ export const NavigationOverlayStyle = styled.nav`
   &.${NavigationOverlayClassName} {
     position: fixed;
     display: none;
-    background: ${Theme.Color.Text};
-    color: ${Theme.Color.White};
+    background: ${Color.OffWhite};
+    color: ${Color.Black};
     top: 0;
     bottom: 0;
     right: 0;
@@ -183,54 +223,57 @@ export const NavigationOverlayStyle = styled.nav`
     flex-direction: column;
     justify-content: space-between;
 
-    .${OverlayBirdClassName} {
-      position: absolute;
-      height: 80%;
-      right: -20%;
-      width: auto;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 0;
-    }
-
-    .${NavigationOverlayClassName}__exit,
-      .${NavigationOverlayClassName}__links,
-      .${ContactInfoClassName} {
-      position: relative;
-      z-index: 1;
-    }
-
-    .${NavigationOverlayClassName}__social {
-      position: absolute;
-      bottom: calc(${Root.Size} * 1.5);
-      right: calc(${Root.Size} * 1.5);
-
-      svg {
-        width: calc(${Root.Size} * 1.5);
-        height: calc(${Root.Size} * 1.5);
-        margin-bottom: calc(${Root.Size} / 3);
-      }
-    }
-
     .${NavigationOverlayClassName}__exit {
-      padding-bottom: calc(${Root.Size} * 3);
+      display: flex;
+      justify-content: flex-end;
+
       .${ExitClassName} {
         width: 30px;
         height: auto;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        * {
+          fill: ${Color.Orange};
+        }
       }
     }
 
     .${NavigationOverlayClassName}__links {
       flex: 1;
+      display: grid;
+      place-content: center;
 
       &__list {
+        text-align: center;
+
         &__item {
           a {
-            font-size: 10vw;
+            font-size: 5vw;
             text-transform: uppercase;
             font-weight: 600;
             padding: 2vw 0;
             display: block;
+            position: relative;
+
+            &:after {
+              height: 3px;
+              width: 100%;
+              background: ${Color.Orange};
+              position: absolute;
+              left: 0;
+              bottom: 1vw;
+            }
+
+            &:hover {
+              text-decoration: none;
+
+              &:after {
+                content: "";
+              }
+            }
           }
         }
       }

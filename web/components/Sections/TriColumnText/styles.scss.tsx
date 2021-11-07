@@ -10,15 +10,11 @@
 //////////////////////////////////////////////////////////////////////
 
 // Core
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
-import { Color, Palette } from "../../../constants/styles/Color";
+import { Color } from "../../../constants/styles/Color";
 import { CssUtils } from "../../../constants/styles/CssUtils";
-import { Theme } from "../../../constants/Theme";
-import { BirdClassName } from "../../_svg/Birds/Bird";
-import { LogoClassName } from "../../_svg/Logos/Logo";
-import { LogotypeClassName } from "../../_svg/Logos/Logotype";
 
 // Constants
 
@@ -40,7 +36,7 @@ export const TriColumnTextStyle = styled.section`
       color: ${Color.White};
       overflow: hidden;
       position: relative;
-      padding: calc(${Root.Size}) calc(${Root.Size} / 1.5);
+      padding: calc(${Root.Size});
 
       > * {
         position: relative;
@@ -49,19 +45,21 @@ export const TriColumnTextStyle = styled.section`
       &:before {
         content: "";
         ${CssUtils.Fill};
-        opacity: 0.9;
+        opacity: 0.8;
         pointer-events: none;
       }
 
       &:nth-of-type(3n - 2) {
         &:before {
-          top: -50%;
-          left: -50%;
-          height: 200%;
+          top: auto;
+          left: 0;
+          bottom: 0;
+          height: 800%;
           width: 200%;
           background-color: ${Color.Purple1};
-          transform: rotate(45deg) translateY(-50px);
-          opacity: 0.8;
+          transform-origin: bottom left;
+          transform: rotate(45deg) translate(-50%, -50px);
+          opacity: 0.5;
         }
       }
 
@@ -115,12 +113,17 @@ export const TriColumnTextStyle = styled.section`
         &__unit {
           grid-column: 1 / 2;
           grid-row: 2 / 3;
+          letter-spacing: 5px;
         }
 
         &__text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           grid-column: 2 / 3;
           grid-row: 1 / -1;
           padding-left: calc(${Root.Size} / 4);
+          line-height: 1.4;
         }
       }
 
@@ -132,6 +135,44 @@ export const TriColumnTextStyle = styled.section`
     }
   }
 
+  @media (max-width: ${Base.Media.Width.Md + "px"}) {
+    .${TriColumnTextClassName} {
+      &__columns {
+        flex-wrap: wrap;
+      }
+
+      &__column {
+        flex: 0 0 50%;
+        padding: calc(${Root.Size} * 2) 10%;
+
+        &:nth-of-type(3n -2) {
+          &:before {
+            transform: none;
+          }
+        }
+
+        &:nth-of-type(3n) {
+          &:before {
+            top: auto;
+            left: 0;
+            bottom: 0;
+            height: 800%;
+            width: 200%;
+            transform-origin: bottom left;
+            transform: rotate(45deg) translate(-50%, -30px);
+            opacity: 0.8;
+            background-color: ${Color.Purple2};
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+    .${TriColumnTextClassName} {
+      &__column {
+        flex: 0 0 100%;
+      }
+    }
   }
 `;

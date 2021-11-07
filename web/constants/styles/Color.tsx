@@ -47,6 +47,7 @@ export const Color = {
 
   // Grayscale Palette
   Black: "#000000",
+  OffBlack: "#3F3F3F",
   Grey: "#ADADAD",
   White: "#FFFFFF",
 
@@ -56,6 +57,7 @@ export const Color = {
   Purple1: "#1D223D",
   Purple2: "#212745",
   Purple3: "#40405B",
+  Purple4: "#403F5B",
 };
 
 /**

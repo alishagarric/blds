@@ -15,7 +15,7 @@ import { createGlobalStyle } from "styled-components";
 
 // Styles
 import { Typography } from "./Font";
-import { Palette } from "./Color";
+import { Color, Palette } from "./Color";
 import { RootVariables } from "../Root";
 import { Theme } from "../Theme";
 
@@ -81,9 +81,17 @@ html {
     padding-bottom: 0;
     background-color: ${Theme.Color.White};
     color: ${Theme.Color.Text};
+    background-color: ${Color.Purple3};
     background-image: url('img/City.jpg');
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
+
+    > #__next {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   /**
