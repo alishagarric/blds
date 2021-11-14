@@ -35,7 +35,7 @@ export const TabbedTextBoxStyle = styled.section`
         calc(${Root.Size} * 1.5) calc(${Root.Size} / 1.5);
       width: 100%;
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
       gap: calc(${Root.Size});
       ${CssUtils.OrangeTab};

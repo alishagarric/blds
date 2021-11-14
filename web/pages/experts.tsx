@@ -45,7 +45,7 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/bernard-sisken.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/bernard-sisken",
                   },
                   summary:
                     "Bernard Siskin received a B.S. in Mathematics from the University of Pittsburgh and ta Ph.D. in Statistics from the University of Pennsylvania...",
@@ -56,7 +56,7 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/leonard-cuppingood.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/leonard-cupingood",
                   },
                   summary:
                     "Leonard Cupingood received his B.A. degree in Mathematics from Rutgers University and his M.A. and Ph.D. degrees in Statistics from...",
@@ -67,7 +67,7 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/david-griffin.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/david-griffin",
                   },
                   summary:
                     "David W. Griffin received his Ph.D. in Economics from Cornell University and B.S. and M.S. degrees in Economics from Rutgers University...",
@@ -78,7 +78,7 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/sam-kursh.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/samuel-kursh",
                   },
                   summary:
                     "Dr. Samuel J. Kursh specializes in the calculation of economic damages in commercial and employment litigation matters. His practice includes...",
@@ -89,21 +89,10 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/chris-erath.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/christopher-erath",
                   },
                   summary:
                     "Dr. Erath received A.B. degrees in Economics and Mathematics from Bowdoin College and a Master's degree and Ph.D. in Economics from...",
-                },
-                {
-                  _type: "bio",
-                  name: "Dr. Bryce Stephens",
-                  image: "/img/bryce-stephens.jpg",
-                  link: {
-                    label: "read more",
-                    dest: "/expert",
-                  },
-                  summary:
-                    "Bryce Stephens provides economic research, econometric analysis, and compliance advisory services, with a specific focus on issues related...",
                 },
                 {
                   _type: "bio",
@@ -111,7 +100,7 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/nick-schmidt.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/nicholas-schmidt",
                   },
                   summary:
                     "Nicholas Schmidt is a partner at BLDS, LLC, and heads the Artificial Intelligence and Machine Learning Innovation Practice...",
@@ -122,7 +111,7 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/brett-margolin.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/brett-margolin",
                   },
                   summary:
                     "Brett Margolin, resident in the Wilmington, Delaware office of BLDS, provides economic analyses in litigation. His active business...",
@@ -133,21 +122,21 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   image: "/img/scott-measley.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/scott-measley",
                   },
                   summary:
                     "Mr. Measley specializes in the calculation of economic damages in personal injury, wrongful death, employment and commercial...",
                 },
                 {
                   _type: "bio",
-                  name: "Dr. Joe Trippi",
-                  image: "/img/joe-trippl.jpg",
+                  name: "Dr. Susanne Shay",
+                  image: "/img/temp.jpg",
                   link: {
                     label: "read more",
-                    dest: "/expert",
+                    dest: "/susanne-shay",
                   },
                   summary:
-                    "Joe Trippi has more than 25 years of experience as a litigation consultant and over 20 years of college teaching, research and administration...",
+                    "Susanne Shay received her B.S. (magna cum laude), M.A. and Ph.D. degrees in Psychology from Temple University. While at Temple,...",
                 },
               ]}
             />

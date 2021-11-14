@@ -18,7 +18,7 @@ export type LMNTS_Section_Bio = {
     year: number;
     location: string;
     detail1: string;
-    detail2: string;
+    detail2?: string;
   }[];
   publications?: {
     __html: string;
@@ -75,11 +75,13 @@ export const Bio: React.FunctionComponent<LMNTS_Section_Bio> = ({
                       {item.location}
                     </p>
                     <p className={`p-sm`}>{item.detail1}</p>
-                    <p
-                      className={`${BioClassName}__bio__education__item__italic p-sm`}
-                    >
-                      {item.detail2}
-                    </p>
+                    {item.detail2 && (
+                      <p
+                        className={`${BioClassName}__bio__education__item__italic p-sm`}
+                      >
+                        {item.detail2}
+                      </p>
+                    )}
                   </div>
                 );
               })}

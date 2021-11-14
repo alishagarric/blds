@@ -69,7 +69,7 @@ export const SiteHead = ({ title = "This is the default title" }: SiteHead) => {
       {/* Opengraph */}
       <meta property="og:title" content="BLDS" />
       <meta property="og:site_name" content="BLDS" />
-      <meta property="og:url" content="blds.com" />
+      <meta property="og:url" content="bldsllc.com/" />
       <meta
         property="og:description"
         content="Expert Analysis, Testimony &amp; Consulting"

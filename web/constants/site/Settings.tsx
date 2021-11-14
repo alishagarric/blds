@@ -35,7 +35,7 @@ export const Settings = {
   siteTitleShort: "BLDS",
   siteDescription: "",
   siteBaseKeywords: "",
-  siteUrl: "https://blds.com/",
+  siteUrl: "https://www.bldsllc.com/",
   themeColor: Color.Primary,
   secondaryColor: Color.Secondary,
   backgroundColor: Color.Background,
