@@ -75,7 +75,7 @@ export const SiteHead = ({ title = "This is the default title" }: SiteHead) => {
         content="Expert Analysis, Testimony &amp; Consulting"
       />
       <meta property="og:type" content="article" />
-      <meta property="og:image" content="/img/opengraph.png" />
+      <meta property="og:image" content="/img/opengraph.jpg" />
 
       <script
         async

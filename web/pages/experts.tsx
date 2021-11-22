@@ -118,14 +118,14 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                 },
                 {
                   _type: "bio",
-                  name: "Scott Measley, M.B.A",
-                  image: "/img/scott-measley.jpg",
+                  name: "Dr. Jin Park",
+                  image: "/img/jin-park.jpg",
                   link: {
                     label: "read more",
-                    dest: "/scott-measley",
+                    dest: "/jin-park",
                   },
                   summary:
-                    "Mr. Measley specializes in the calculation of economic damages in personal injury, wrongful death, employment and commercial...",
+                    "Dr. Park is a Senior Consultant at BLDS, LLC. He specializes in labor economics and statistics. Dr. Park has extensive experience in...",
                 },
                 {
                   _type: "bio",
@@ -137,6 +137,28 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                   },
                   summary:
                     "Susanne Shay received her B.S. (magna cum laude), M.A. and Ph.D. degrees in Psychology from Temple University. While at Temple,...",
+                },
+                {
+                  _type: "bio",
+                  name: "Scott Measley, M.B.A",
+                  image: "/img/scott-measley.jpg",
+                  link: {
+                    label: "read more",
+                    dest: "/scott-measley",
+                  },
+                  summary:
+                    "Mr. Measley specializes in the calculation of economic damages in personal injury, wrongful death, employment and commercial...",
+                },
+                {
+                  _type: "bio",
+                  name: "Chris Stocks",
+                  image: "/img/chris-stocks.jpg",
+                  link: {
+                    label: "read more",
+                    dest: "/chris-stocks",
+                  },
+                  summary:
+                    "Chris is a Manager in the Algorithmic Fairness and Data Science practices at SolasAI, where he helps clients build fair, highly...",
                 },
               ]}
             />

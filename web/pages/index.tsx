@@ -36,7 +36,7 @@ const HomePage: NextPage<HomePage> = () => {
         <div className={`${HomePageClassName}`}>
           <Inner>
             <TabbedTextBox
-              headline="Industry-leading consultants and data scientists"
+              headline="Industry-leading consultants, statisticians and economists"
               headlineAlignment="left"
               layout="most-space"
               textBlocks={[
