@@ -48,7 +48,7 @@ export const ContactForm: React.FunctionComponent<LMNTS_Section_ContactForm> =
           )}
 
           <div className={`${ContactFormClassName}__container__form`}>
-            <form>
+            <form method="POST" action="https://formspree.io/f/xvologvj">
               <fieldset
                 className={`${ContactFormClassName}__container__form__name`}
               >

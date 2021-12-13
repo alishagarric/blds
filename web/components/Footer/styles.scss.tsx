@@ -35,8 +35,12 @@ export const FooterStyle = styled.footer`
       &__main {
         grid-column: 1 / 2;
 
-        a:hover {
-          text-decoration: none;
+        a {
+          color: ${Color.White};
+
+          &:hover {
+            text-decoration: none;
+          }
         }
 
         p {
@@ -87,6 +91,8 @@ export const FooterStyle = styled.footer`
           background: ${Color.Orange};
           font-weight: bold;
           margin-left: 40%;
+          color: ${Color.White};
+          text-transform: uppercase;
 
           &:hover {
             opacity: 0.9;

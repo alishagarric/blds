@@ -18,6 +18,7 @@ import { Typography } from "./Font";
 import { Color, Palette } from "./Color";
 import { RootVariables } from "../Root";
 import { Theme } from "../Theme";
+import { randomNum } from "../../utils/randomNum";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -82,7 +83,7 @@ html {
     background-color: ${Theme.Color.White};
     color: ${Theme.Color.Text};
     background-color: ${Color.Purple3};
-    background-image: url('img/City.jpg');
+    background-image: url(${"img/city" + randomNum() + ".jpg"});
     background-size: 100% auto;
     background-repeat: no-repeat;
 
@@ -271,6 +272,7 @@ html {
   [type="reset"],
   [type="submit"] {
     -webkit-appearance: button;
+    border: none;
   }
 
   /**
@@ -302,6 +304,7 @@ html {
 
   fieldset {
     padding: 0.35em 0.75em 0.625em;
+    border: none;
   }
 
   /**
@@ -463,7 +466,13 @@ html {
   }
 
   a {
+    color: ${Color.varForeground};
     text-decoration: none;
+
+    &:visited {
+      color: ${Color.varForeground};
+    }
+
     &:hover {
       text-decoration: underline;
     }

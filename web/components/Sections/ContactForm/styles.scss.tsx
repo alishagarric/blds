@@ -136,6 +136,7 @@ export const ContactFormStyle = styled.section`
             font-weight: 600;
             color: ${Color.White};
             min-width: 240px;
+            text-transform: uppercase;
 
             &:hover {
               opacity: 0.9;
