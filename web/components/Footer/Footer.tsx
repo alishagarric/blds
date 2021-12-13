@@ -40,15 +40,21 @@ export const Footer: React.FunctionComponent<Footer> = ({}) => {
         </div>
 
         <div className={`${FooterClassName}__form`}>
-          <form>
+          <form method="POST" action="https://formspree.io/f/xvologvj">
             <p className={`${FooterClassName}__form__label`}>Contact BLDS</p>
             <fieldset className={`${FooterClassName}__form__email`}>
-              <input type="text" placeholder="email address" required />
+              <input
+                type="text"
+                placeholder="email address"
+                required
+                name="_replyTo"
+              />
             </fieldset>
             <textarea
               placeholder="message"
               required
               className={`${FooterClassName}__form__message`}
+              name="Message"
             />
             <input
               type="submit"
