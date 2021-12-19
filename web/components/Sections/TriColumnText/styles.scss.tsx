@@ -71,7 +71,8 @@ export const TriColumnTextStyle = styled.section`
 
       &:nth-of-type(3n) {
         &:before {
-          background-color: ${Color.Purple3};
+          background-color: ${Color.Purple1};
+          opacity: 0.5;
         }
       }
 
