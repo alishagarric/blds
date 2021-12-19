@@ -161,7 +161,7 @@ export const TriColumnTextStyle = styled.section`
             width: 200%;
             transform-origin: bottom left;
             transform: rotate(45deg) translate(-50%, -30px);
-            opacity: 0.8;
+            opacity: 0.5;
             background-color: ${Color.Purple2};
           }
         }
