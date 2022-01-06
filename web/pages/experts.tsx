@@ -130,7 +130,7 @@ const ExpertsPage: NextPage<ExpertsPage> = () => {
                 {
                   _type: "bio",
                   name: "Dr. Susanne Shay",
-                  image: "/img/temp.jpg",
+                  image: "/img/avatar.png",
                   link: {
                     label: "read more",
                     dest: "/susanne-shay",
