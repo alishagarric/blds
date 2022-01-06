@@ -43,7 +43,7 @@ const HomePage: NextPage<HomePage> = () => {
                 {
                   _type: "text",
                   text: {
-                    __html: `<p class="h6">Virtually every major lending institution in the U.S. uses our framework for fair lending</p>`,
+                    __html: `<p class="h6">We have worked with more than 50% of the <a href="https://www.law.com/americanlawyer/2021/04/20/the-2021-am-law-100-ranked-by-gross-revenue/?slreturn=20211122175031" target="_blank" rel="noopener noreferrer nofollow">AmLaw top-100 firms</a></p>`,
                   },
                 },
                 {
