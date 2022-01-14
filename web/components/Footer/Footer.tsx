@@ -36,7 +36,7 @@ export const Footer: React.FunctionComponent<Footer> = ({}) => {
         </div>
 
         <div className={`${FooterClassName}__bottom`}>
-          <p>© 2021 BLDS.LLC, All Rights Reserved</p>
+          <p>© 2022 BLDS.LLC, All Rights Reserved</p>
         </div>
 
         <div className={`${FooterClassName}__form`}>
