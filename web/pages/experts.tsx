@@ -17,7 +17,7 @@ type ExpertsPage = {};
 export const ExpertsPageClassName = "experts";
 
 function initializeReactGA() {
-  ReactGA.initialize("G-FX52XQGXD1");
+  ReactGA.initialize("G-F3FQVRWRVS");
   ReactGA.pageview("/experts");
 }
 

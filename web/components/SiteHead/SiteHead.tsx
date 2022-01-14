@@ -75,7 +75,7 @@ export const SiteHead = ({ title = "This is the default title" }: SiteHead) => {
 
       <script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=G-FX52XQGXD1`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-F3FQVRWRVS`}
       />
       <script
         dangerouslySetInnerHTML={{
@@ -83,7 +83,7 @@ export const SiteHead = ({ title = "This is the default title" }: SiteHead) => {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-FX52XQGXD1', {
+        gtag('config', 'G-F3FQVRWRVS', {
           page_path: window.location.pathname,
         });
         `,

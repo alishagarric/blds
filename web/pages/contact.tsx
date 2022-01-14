@@ -18,7 +18,7 @@ type ContactPage = {};
 export const ContactPageClassName = "contact";
 
 function initializeReactGA() {
-  ReactGA.initialize("G-FX52XQGXD1");
+  ReactGA.initialize("G-F3FQVRWRVS");
   ReactGA.pageview("/contact");
 }
 
