@@ -43,7 +43,7 @@ export const TriColumnTextStyle = styled.section`
       }
 
       &.__long {
-        flex: 1.15;
+        flex: 1.1;
       }
 
       &.__short {
