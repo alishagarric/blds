@@ -61,12 +61,14 @@ const AboutPage: NextPage<AboutPage> = () => {
                   text: {
                     __html: `<p>BLDS's rigorous statistical approach has also been applied to questions of credit discrimination, wage and hour disputes, and insurance issues.</p>`,
                   },
+                  size: "short",
                 },
                 {
                   _type: "html",
                   text: {
                     __html: `<p>BLDS economic experts provide litigation support and advisory services on economic damages in commercial, employment, and tort actions. They are also recognized experts in business valuation theory and practice, including valuation discounts and premiums.</p>`,
                   },
+                  size: "longest",
                 },
                 {
                   _type: "html",

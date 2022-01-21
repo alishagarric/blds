@@ -36,7 +36,19 @@ export const TriColumnTextStyle = styled.section`
       color: ${Color.White};
       overflow: hidden;
       position: relative;
-      padding: calc(${Root.Size});
+      padding: calc(${Root.Size} * 1.5) calc(${Root.Size} / 1.5);
+
+      &.__longest {
+        flex: 1.35;
+      }
+
+      &.__long {
+        flex: 1.15;
+      }
+
+      &.__short {
+        flex: 0.9;
+      }
 
       > * {
         position: relative;
@@ -97,37 +109,6 @@ export const TriColumnTextStyle = styled.section`
         }
       }
 
-      &__stat {
-        display: grid;
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto;
-
-        * {
-          padding-bottom: 0;
-        }
-
-        &__number {
-          grid-column: 1 / 2;
-          grid-row: 1 / 2;
-        }
-
-        &__unit {
-          grid-column: 1 / 2;
-          grid-row: 2 / 3;
-          letter-spacing: 5px;
-        }
-
-        &__text {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          grid-column: 2 / 3;
-          grid-row: 1 / -1;
-          padding-left: calc(${Root.Size} / 4);
-          line-height: 1.4;
-        }
-      }
-
       &__html {
         > *:last-child {
           padding-bottom: 0;
@@ -143,7 +124,7 @@ export const TriColumnTextStyle = styled.section`
       }
 
       &__column {
-        flex: 0 0 50%;
+        flex: 0 0 50% !important;
         padding: calc(${Root.Size} * 2) 10%;
 
         &:nth-of-type(3n -2) {
@@ -172,7 +153,7 @@ export const TriColumnTextStyle = styled.section`
   @media (max-width: ${Base.Media.Width.Sm + "px"}) {
     .${TriColumnTextClassName} {
       &__column {
-        flex: 0 0 100%;
+        flex: 0 0 100% !important;
       }
     }
   }

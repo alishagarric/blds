@@ -40,6 +40,15 @@ export const TabbedTextBoxStyle = styled.section`
       gap: calc(${Root.Size});
       ${CssUtils.OrangeTab};
 
+      .stat {
+        max-width: calc(${Root.Size} * 6);
+        color: ${Color.Purple3};
+
+        &.__short {
+          max-width: calc(${Root.Size} * 4);
+        }
+      }
+
       &__headline {
         grid-column: 1 / -1;
         text-align: center;
@@ -52,12 +61,17 @@ export const TabbedTextBoxStyle = styled.section`
           &-right {
             text-align: right;
           }
+
+          &-left {
+            text-align: left;
+          }
         }
 
         h2 {
           color: ${Color.Purple4};
           display: inline-block;
           ${CssUtils.UnderlinedHeader};
+          font-weight: 400;
         }
       }
 
@@ -112,18 +126,9 @@ export const TabbedTextBoxStyle = styled.section`
         }
 
         &-most-space {
-          .${TabbedTextBoxClassName} {
-            &__container {
-              &__item:nth-of-type(even) {
-                padding-left: 25%;
-                padding-right: 5%;
-              }
-              &__item:nth-of-type(odd) {
-                padding-right: 25%;
-                padding-left: 5%;
-              }
-            }
-          }
+          padding-left: 14%;
+          padding-right: 14%;
+          grid-template-columns: 5fr 4fr;
         }
       }
     }
@@ -136,6 +141,10 @@ export const TabbedTextBoxStyle = styled.section`
         flex-direction: column;
         gap: ${Root.Size};
 
+        .stat {
+          margin-left: 0;
+        }
+
         > * {
           max-width: 600px;
           margin: 0 auto;
@@ -143,18 +152,6 @@ export const TabbedTextBoxStyle = styled.section`
 
         &.__layout {
           &-most-space {
-            .${TabbedTextBoxClassName} {
-              &__container {
-                &__item:nth-of-type(even) {
-                  padding-left: 0;
-                  padding-right: 0;
-                }
-                &__item:nth-of-type(odd) {
-                  padding-right: 0;
-                  padding-left: 0;
-                }
-              }
-            }
           }
         }
       }

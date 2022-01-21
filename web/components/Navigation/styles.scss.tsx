@@ -43,27 +43,12 @@ export const NavigationStyle = styled.nav`
     }
 
     &.__layout-alt {
-      .${NavigationClassName} {
-        &__tagline {
-          align-self: flex-end;
-          margin: calc(${Root.Size} * 1.5) calc(${Root.Size} / 2)
-            calc(${Root.Size} * 1.5) 0;
-          font-size: 2.1875rem;
-
-          span {
-            display: block;
-            white-space: nowrap;
-            padding-left: 20%;
-          }
-        }
-      }
+      margin-bottom: calc(${Root.Size} * 2.5);
 
       ~ footer {
         .${FooterClassName} {
           &__main {
-            p {
-              max-width: 200px;
-            }
+            align-self: start;
           }
 
           &__bottom {
@@ -139,25 +124,6 @@ export const NavigationStyle = styled.nav`
       font-size: 1.75rem;
       padding-bottom: 0;
       font-style: italic;
-    }
-
-    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
-      &.${NavigationClassName} {
-        &.__layout-alt {
-          .${NavigationClassName} {
-            &__tagline {
-              font-size: 2.5vw;
-              margin-right: 0;
-            }
-          }
-        }
-      }
-      .${NavigationClassName}__logo {
-        .${LogoClassName} {
-          height: 40px;
-          width: auto;
-        }
-      }
     }
 
     @media (max-width: ${Base.Media.Width.Md + "px"}) {

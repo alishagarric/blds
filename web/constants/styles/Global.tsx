@@ -16,9 +16,10 @@ import { createGlobalStyle } from "styled-components";
 // Styles
 import { Typography } from "./Font";
 import { Color, Palette } from "./Color";
-import { RootVariables } from "../Root";
+import { Root, RootVariables } from "../Root";
 import { Theme } from "../Theme";
 import { randomNum } from "../../utils/randomNum";
+import { Base } from "./Base";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -508,6 +509,52 @@ html {
 
   strong {
     font-weight: 600;
+  }
+
+  .stat {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+
+    * {
+      padding-bottom: 0;
+    }
+
+    &__number {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      margin-top: calc(${Root.Size} / -4);
+    }
+
+    &__unit {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      letter-spacing: 5px;
+
+      @media (max-width: ${Base.Media.Width.Md + "px"}) {
+        font-size: .65rem;
+      }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-column: 2 / 3;
+      grid-row: 1 / -1;
+      padding-left: calc(${Root.Size} / 2.5);
+      font-size: 2rem;
+      line-height: 1.15;
+
+      @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      font-size: 1.15rem;
+      }
+
+      @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+    }
   }
 
 `;

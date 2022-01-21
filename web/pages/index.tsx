@@ -41,22 +41,6 @@ const HomePage: NextPage<HomePage> = () => {
               layout="most-space"
               textBlocks={[
                 {
-                  _type: "text",
-                  text: {
-                    __html: `<p class="h6">We have worked with more than 50% of the <a href="https://www.law.com/americanlawyer/2021/04/20/the-2021-am-law-100-ranked-by-gross-revenue/?slreturn=20211122175031" target="_blank" rel="noopener noreferrer nofollow">AmLaw top-100 firms</a></p>`,
-                  },
-                },
-                {
-                  _type: "text",
-                  text: {
-                    __html: `<p class="h6">Providing expert consulting to numerous Federal, State, and Local Regulators</p>`,
-                  },
-                },
-              ]}
-            />
-            <TriColumnText
-              columns={[
-                {
                   _type: "stat",
                   number: "45",
                   unit: "years",
@@ -69,13 +53,34 @@ const HomePage: NextPage<HomePage> = () => {
                   unit: "years",
                   text: "In Fair Lending Analytics",
                   alignment: "center",
+                  size: "short",
+                },
+              ]}
+            />
+            <TriColumnText
+              columns={[
+                {
+                  _type: "html",
+                  text: {
+                    __html: `<p class="h5">We have worked with more than <b>50% of the AmLaw top-100</b> firms</p>`,
+                  },
+                  alignment: "center",
                 },
                 {
                   _type: "html",
                   text: {
-                    __html: `<p class="h5">Consultants to <b>over 50% of the fortune 50</b></p>`,
+                    __html: `<p class="h5">Consultants to <b>over 50% of the Fortune 50</b></p>`,
                   },
                   alignment: "center",
+                  size: "short",
+                },
+                {
+                  _type: "html",
+                  text: {
+                    __html: `<p class="h5">Providing expert consulting to <b>numerous Federal, State, and Local Regulators</b></p>`,
+                  },
+                  alignment: "center",
+                  size: "long",
                 },
               ]}
             />
