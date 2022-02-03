@@ -76,6 +76,10 @@ export const TabbedTextBoxStyle = styled.section`
       }
 
       &__item {
+        &:last-child:first-child {
+          grid-column: 1 / -1;
+        }
+
         > *:last-child {
           padding-bottom: 0;
         }

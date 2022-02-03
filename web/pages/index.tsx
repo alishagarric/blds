@@ -62,7 +62,7 @@ const HomePage: NextPage<HomePage> = () => {
                 {
                   _type: "html",
                   text: {
-                    __html: `<p class="h5">We have worked with more than <b>50% of the AmLaw top-100</b> firms</p>`,
+                    __html: `<p class="h5">We have worked with more than <b>50% of the <a href="https://www.law.com/americanlawyer/2021/04/20/the-2021-am-law-100-ranked-by-gross-revenue/" target="_blank">AmLaw top-100</a></b> firms</p>`,
                   },
                   alignment: "center",
                 },

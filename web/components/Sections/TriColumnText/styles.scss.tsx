@@ -54,6 +54,31 @@ export const TriColumnTextStyle = styled.section`
         position: relative;
       }
 
+      a {
+        color: ${Color.White};
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 10%;
+          height: 1px;
+          left: 0;
+          right: 0;
+          background: ${Color.White};
+          will-change: transform;
+          transition: transform 0.25s ease;
+        }
+
+        &:hover {
+          text-decoration: none;
+
+          &:after {
+            transform: scale(0.8);
+          }
+        }
+      }
+
       &:before {
         content: "";
         ${CssUtils.Fill};

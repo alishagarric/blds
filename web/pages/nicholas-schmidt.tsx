@@ -42,22 +42,15 @@ const ExpertPage: NextPage<ExpertPage> = () => {
             }}
             education={[
               {
-                year: 1970,
-                location: "University of Pennsylvania",
-                detail1: "Ph.D., Statistics",
-                detail2: "Minor, Econometrics",
+                year: 2011,
+                location: "University of Chicago, Booth School of Business",
+                detail1: "M.B.A., Econometrics, Economics and Finance",
               },
               {
-                year: 1966,
-                location: "University of North Carolina",
-                detail1: "Graduate Study Major, Economics",
-                detail2: "Minor, Statistics",
-              },
-              {
-                year: 1965,
-                location: "University of Pittsburgh",
-                detail1: "B.S., Mathematics",
-                detail2: "Minor, Economics",
+                year: 2001,
+                location: "George Mason University",
+                detail1: "B.S., Economics",
+                detail2: "High Honors",
               },
             ]}
             publications={[
