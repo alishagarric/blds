@@ -64,7 +64,7 @@ const ExpertPage: NextPage<ExpertPage> = () => {
                 __html: `<p class="p-sm">AI Risk and Security Working Group (co-author).  2020. “Artificial Intelligence Risk & Governance.”  AIRS White Paper.</p>`,
               },
               {
-                __html: `<p class="p-sm">HBLDS, LLC (Nicholas Schmidt); Discover Financial Services (Raghu Kulkarni, et al.); H2O.ai (Patrick Hall, et al.). 2020. “Machine Learning: Considerations for expanding access to credit fairly and transparently.”</p>`,
+                __html: `<p class="p-sm">BLDS, LLC (Nicholas Schmidt); Discover Financial Services (Raghu Kulkarni, et al.); H2O.ai (Patrick Hall, et al.). 2020. “Machine Learning: Considerations for expanding access to credit fairly and transparently.”</p>`,
               },
               {
                 __html: `<p class="p-sm">Schmidt, Nicholas and Stephens, Bryce.  “An Introduction to Artificial Intelligence and Solutions to the Problem of Algorithmic Discrimination.” Conference on Consumer Finance Law (CCFL) Quarterly Report.  Volume 73, Number 2 (October 2019).</p>`,
