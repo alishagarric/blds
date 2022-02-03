@@ -73,6 +73,10 @@ export const TabbedTextBoxStyle = styled.section`
           ${CssUtils.UnderlinedHeader};
           font-weight: 400;
         }
+
+        + .${TabbedTextBoxClassName}__container__item:last-child {
+          grid-column: 1 / -1;
+        }
       }
 
       &__item {
