@@ -36,6 +36,14 @@ export const BioStyle = styled.section`
       grid-template-columns: 1fr 2fr;
       ${CssUtils.OrangeTab};
 
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
       &__image {
         grid-row: 1 / 3;
         grid-column: 1 / 2;

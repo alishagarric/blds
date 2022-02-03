@@ -61,6 +61,9 @@ const ExpertPage: NextPage<ExpertPage> = () => {
             ]}
             publications={[
               {
+                __html: `<p class="p-sm">Siskin, Bernard; Schmidt, Nicholas; Stephens, Bryce. <a href="/files/20211116_FICO_-_Unbiased_Algorithmic_Credit_Scoring.pdf" target="_blank">“Algorithmic Credit Scoring and FICO’s Role in Developing Accurate, Unbiased, and Fair Credit Scoring Models.”</a> Forthcoming, Consumer Law Quarterly Report (subject to revision). (2021)</p>`,
+              },
+              {
                 __html: `<p class="p-sm">B. Siskin, "Comparing the Role of Statistics In Lending and Employment Cases," Fair Lending Analysis: A Compendium of Essays on the Use of Statistics, American Bankers Association, 1995.</p>`,
               },
               {
